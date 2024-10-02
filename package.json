@@ -4,8 +4,9 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"build": "rbxtsc",
+		"compile": "rbxtsc",
 		"watch": "rbxtsc -w",
+		"build": "rojo build -o place.rbxl",
 		"serve": "rojo serve"
 	},
 	"keywords": [],
