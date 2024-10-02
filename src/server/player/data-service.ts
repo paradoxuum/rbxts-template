@@ -76,16 +76,17 @@ export class DataService implements OnStart {
 	}
 
 	private onPlayerAdded(player: Player) {
+		let callListeners = true;
 		this.loadPlayerData(player)
-			.then((shouldLoad) => {
-				if (!shouldLoad) return;
-				for (const listener of this.joinListeners) {
-					listener.onPlayerJoin(player);
-				}
+			.then((loaded) => {
+				callListeners = loaded;
 			})
 			.catch((err) => {
 				warn(`Failed to load player data for ${player.Name}: ${err}`);
 				setPlayerData(player, DEFAULT_DATA);
+			})
+			.finally(() => {
+				if (!callListeners) return;
 				for (const listener of this.joinListeners) {
 					listener.onPlayerJoin(player);
 				}
