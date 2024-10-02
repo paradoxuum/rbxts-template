@@ -94,6 +94,8 @@ export class DataService implements OnStart {
 
 	private onPlayerRemoving(player: Player) {
 		const connection = this.connections.get(player);
+		this.connections.delete(player);
+
 		connection?.unsubscribe();
 		for (const listener of this.leaveListeners) {
 			listener.onPlayerLeave(player);
