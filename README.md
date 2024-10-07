@@ -41,6 +41,6 @@ This project is released under the <a href="LICENSE.md">MIT License</a>.
 
 <div align="center">
 
-[![MIT License](https://img.shields.io/github/license/littensy/charm-example?style=for-the-badge)](LICENSE.md)
+[![MIT License](https://img.shields.io/github/license/paradoxuum/rbxts-template?style=for-the-badge)](LICENSE.md)
 
 </div>
