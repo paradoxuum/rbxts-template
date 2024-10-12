@@ -19,7 +19,7 @@
 		"@rbxts/types": "^1.0.809",
 		"rbxts-transformer-flamework": "^1.2.3",
 		"roblox-ts": "^3.0.0",
-		"typescript": "=5.5.3"
+		"typescript": "5.5.3"
 	},
 	"dependencies": {
 		"@flamework/core": "^1.2.3",
