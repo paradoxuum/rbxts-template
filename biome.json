@@ -22,6 +22,9 @@
 			"recommended": true,
 			"style": {
 				"useImportType": "off"
+			},
+			"suspicious": {
+				"noShadowRestrictedNames": "off"
 			}
 		}
 	},
