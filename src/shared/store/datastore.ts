@@ -1,29 +1,44 @@
 import { atom } from "@rbxts/charm";
-import Remap from "@rbxts/remap";
 
 export interface PlayerData {
-	readonly money: number;
+  readonly money: number;
 }
 
+type PlayerDataMap = {
+  readonly [K in string]?: PlayerData;
+};
+
 export const datastore = {
-	players: atom(new ReadonlyMap<string, PlayerData>()),
+  players: atom<PlayerDataMap>({}),
 };
 
 export function getPlayerData(player: Player) {
-	return datastore.players().get(player.Name);
+  return datastore.players()[player.Name];
 }
 
-export function setPlayerData(player: Player, data: PlayerData) {
-	datastore.players((state) => Remap.set(state, player.Name, data));
+export function setPlayerData(player: Player, playerData: PlayerData) {
+  datastore.players((state) => ({
+    ...state,
+    [player.Name]: playerData,
+  }));
 }
 
 export function deletePlayerData(player: Player) {
-	datastore.players((state) => Remap.delete(state, player.Name));
+  datastore.players((state) => ({
+    ...state,
+    [player.Name]: undefined,
+  }));
 }
 
 export function updatePlayerData(
-	player: Player,
-	updater: (data: PlayerData) => PlayerData,
+  player: Player,
+  updater: (data: PlayerData) => PlayerData,
 ) {
-	datastore.players((state) => Remap.change(state, player.Name, updater));
+  datastore.players((state) => {
+    const currentState = state[player.Name];
+    return {
+      ...state,
+      [player.Name]: currentState && updater(currentState),
+    };
+  });
 }

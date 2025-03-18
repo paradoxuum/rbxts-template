@@ -1,17 +1,18 @@
+import CharmSync from "@rbxts/charm-sync";
+import { atoms } from "shared/store";
+import { Events } from "./remotes";
 import { Flamework } from "@flamework/core";
-import { sync } from "@rbxts/charm";
+import { mount } from "@rbxts/vide";
+import Vide from "@rbxts/vide";
 import { Players } from "@rbxts/services";
-import Vide, { mount } from "@rbxts/vide";
-import { atoms } from "shared/store/sync";
-import { Events } from "./networking";
 import { App } from "./ui/app";
 
-const client = sync.client({ atoms });
-
-Events.sync.connect((payload) => client.sync(payload));
+const syncer = CharmSync.client({ atoms });
+Events.sync.connect((payload) => {
+  syncer.sync(payload);
+});
 Events.init();
 
 Flamework.addPaths("src/client");
 Flamework.ignite();
-
 mount(() => <App />, Players.LocalPlayer.WaitForChild("PlayerGui"));

@@ -2,6 +2,8 @@
 
 A basic template for creating Roblox games using roblox-ts.
 
+Based on [charm-example](https://github.com/littensy/charm-example).
+
 **Libraries**:
 
 - 🔥 [Flamework](https://flamework.fireboltofdeath.dev/): Extensible game framework for roblox-ts

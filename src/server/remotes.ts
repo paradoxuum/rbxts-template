@@ -1,3 +1,3 @@
-import { GlobalEvents } from "shared/networking";
+import { GlobalEvents } from "shared/remotes";
 
 export const Events = GlobalEvents.createServer({});

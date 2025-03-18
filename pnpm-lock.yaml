@@ -9,17 +9,20 @@ importers:
   .:
     dependencies:
       '@flamework/core':
-        specifier: ^1.2.3
-        version: 1.2.3
+        specifier: ^1.2.4
+        version: 1.2.4
       '@flamework/networking':
-        specifier: ^1.2.3
-        version: 1.2.3(@flamework/core@1.2.3)
+        specifier: ^1.2.4
+        version: 1.2.4(@flamework/core@1.2.4)
       '@rbxts/charm':
-        specifier: ^0.7.6
-        version: 0.7.6
+        specifier: ^0.10.0
+        version: 0.10.0
+      '@rbxts/charm-sync':
+        specifier: ^0.3.0
+        version: 0.3.0(@rbxts/charm@0.10.0)
       '@rbxts/lapis':
-        specifier: ^0.3.6
-        version: 0.3.6(@rbxts/t@3.1.1)
+        specifier: ^0.3.8
+        version: 0.3.8(@rbxts/t@3.1.1)
       '@rbxts/remap':
         specifier: ^0.2.2
         version: 0.2.2
@@ -27,8 +30,8 @@ importers:
         specifier: ^1.5.5
         version: 1.5.5
       '@rbxts/vide':
-        specifier: ^0.4.6
-        version: 0.4.6
+        specifier: ^0.5.6
+        version: 0.5.6
     devDependencies:
       '@biomejs/biome':
         specifier: 1.9.3
@@ -37,11 +40,11 @@ importers:
         specifier: 3.0.0-types.0
         version: 3.0.0-types.0
       '@rbxts/types':
-        specifier: ^1.0.809
-        version: 1.0.809
+        specifier: ^1.0.841
+        version: 1.0.841
       rbxts-transformer-flamework:
-        specifier: ^1.2.3
-        version: 1.2.3(typescript@5.5.3)
+        specifier: ^1.2.4
+        version: 1.2.4(typescript@5.5.3)
       roblox-ts:
         specifier: ^3.0.0
         version: 3.0.0
@@ -104,27 +107,27 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@flamework/core@1.2.3':
-    resolution: {integrity: sha512-WgK/xe+++KxCASa+wwIxDyzVMjJ/lRJkhUTywqAItul3lbTZPessK0Tv6VmXrqg2xbKi6aZZmHb7sZVh2pViUA==}
+  '@flamework/core@1.2.4':
+    resolution: {integrity: sha512-ND3RxRqDkX1diA7oTQI3Z7Dw1xQQP5wgWoK8X/ppav0KT/jcdqFx1Lwrn06nX2AYdvw1vUoZv834lc4xQUOgyA==}
 
-  '@flamework/networking@1.2.3':
-    resolution: {integrity: sha512-ZC799XY1HzrMqU25qzq1u61UJYJzQXIJHzvHXOovPKnoN3Covf9eby5qTZAQGnoqyDbcXjP5JVDMa+BoV4xDHw==}
+  '@flamework/networking@1.2.4':
+    resolution: {integrity: sha512-ujXQ7FnW1L5TdwrSxZpQ31KK9Dp5JmZHhD1328rKiGAPb/aw/SQ4ia2/V+pq/DStaCPkgEL8tDjfdLtOtwYf9A==}
     peerDependencies:
       '@flamework/core': '*'
 
-  '@rbxts/charm@0.7.6':
-    resolution: {integrity: sha512-MG4m7h+0+SUv1QQwvCULnW7sMgJkGSwbY9Hu9KDPpfP+P61PHsu4Ndp8eRs/YYei/e8v+ON8YizuBXPHymFyZQ==}
+  '@rbxts/charm-sync@0.3.0':
+    resolution: {integrity: sha512-+kvyn6pUXkLpvxFnZhMDE/v15LA1gnfKlmmiK85O0EX5GoY1Yqs4GJUGy1X04b7OdTeXxX9rKrFpmJNX+9054A==}
     peerDependencies:
-      '@rbxts/react': '*'
-    peerDependenciesMeta:
-      '@rbxts/react':
-        optional: true
+      '@rbxts/charm': 0.10.0
+
+  '@rbxts/charm@0.10.0':
+    resolution: {integrity: sha512-pcGpNyqNOcJ7r9UbAjFaUqU0F9Q+wCr4/2kUs8L0hh4dVhUN7t6ur4P7zAMzNuMJQG8YP47a9rq0l0/LlhLuow==}
 
   '@rbxts/compiler-types@3.0.0-types.0':
     resolution: {integrity: sha512-VGOHJPoL7+56NTatMGqQj3K7xWuzEV+aP4QD5vZiHu+bcff3kiTmtoadaF6NkJrmwfFAvbsd4Dg764ZjWNceag==}
 
-  '@rbxts/lapis@0.3.6':
-    resolution: {integrity: sha512-NpvnT1yQYmgKlddxFTmaHSEXlcuDJOSMVMcnZOjL5ILy8ia/KiPqQ1ESWmXfvdfNNwQ7+fI0H/qtZU5PY2/0fA==}
+  '@rbxts/lapis@0.3.8':
+    resolution: {integrity: sha512-SQTVdSp47Rh7nzuI/ArUsGssz2+KmciPlue4Qlj3i9iO2p3Xgf1ZsgfhvMemPih/kFdjSH47E8wHGA4dY/Y+AA==}
     peerDependencies:
       '@rbxts/t': '*'
 
@@ -146,11 +149,11 @@ packages:
   '@rbxts/t@3.1.1':
     resolution: {integrity: sha512-r+IvHHGLt9ZM8+cJAs5Q7ZyGaSlsbkXTaeat85FxRmjjozykHLbQ24rY/5utJbp63a5uCy3Wyl1fGv/Gk/GnIw==}
 
-  '@rbxts/types@1.0.809':
-    resolution: {integrity: sha512-COmNdE5VKq44tU1Sqbj0b70qDcUpBY1Uu5BhNb25v1yJATwcoVjsmYTyaxmRO4EVdqOATjOUBU2jbxZa4K83uw==}
+  '@rbxts/types@1.0.841':
+    resolution: {integrity: sha512-702AeoauR2Pqi+v5PI6UovUOzvb5rEoizOFcjJ1otm1j4dmTVTmqYZZ2uSpRmEziTxOwozPyfYd6lW1MaCvzDA==}
 
-  '@rbxts/vide@0.4.6':
-    resolution: {integrity: sha512-xYtvCS05nGq1YU7fyQVmp4z1CcvuOR+VKpKj/Y7lFPvKobQ3oHTQEzZiJFEMZ+iSeHxwZhwpzVjrP+6+e2EoQw==}
+  '@rbxts/vide@0.5.6':
+    resolution: {integrity: sha512-tY1X6d06Gt9CAxLfZvPTEaacFuRzjzGBfOCyzT7GJBY8kB6kZoJUnbAHpqRKze7YnXTrKQdFEV76ATWD1m4AVw==}
 
   '@roblox-ts/luau-ast@2.0.0':
     resolution: {integrity: sha512-cmMi093IdwBOLVxwuordhM8AmtbyTIyRpsTbB0D/JauidW4SXsQRQowSwWjHo4QP0DRJBXvOIlxtqEQi50uNzQ==}
@@ -347,8 +350,8 @@ packages:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
     engines: {node: '>=8.6'}
 
-  rbxts-transformer-flamework@1.2.3:
-    resolution: {integrity: sha512-QuveQ/sgxMMOE3Kov3TeKKht8b/ZwWJcghPhILPaluWYzHTm3AfUnkG9+9FrkfuEvKL44ug9iLTtMiMJVKg8iw==}
+  rbxts-transformer-flamework@1.2.4:
+    resolution: {integrity: sha512-D+yEEqNETRI0ob9hlMjmPCwZ2V4V1sawquc2SMS4iI9uoVZKJqiuE8SBuwatemqc47mfI/8l1hTet0d2BuwYfw==}
     peerDependencies:
       typescript: '*'
 
@@ -481,7 +484,7 @@ snapshots:
   '@biomejs/cli-win32-x64@1.9.3':
     optional: true
 
-  '@flamework/core@1.2.3':
+  '@flamework/core@1.2.4':
     dependencies:
       '@rbxts/maid': 1.1.0
       '@rbxts/object-utils': 1.0.4
@@ -489,19 +492,23 @@ snapshots:
       '@rbxts/signal': 1.1.1
       '@rbxts/t': 3.1.1
 
-  '@flamework/networking@1.2.3(@flamework/core@1.2.3)':
+  '@flamework/networking@1.2.4(@flamework/core@1.2.4)':
     dependencies:
-      '@flamework/core': 1.2.3
+      '@flamework/core': 1.2.4
       '@rbxts/object-utils': 1.0.4
       '@rbxts/services': 1.5.5
       '@rbxts/signal': 1.1.1
       '@rbxts/t': 3.1.1
 
-  '@rbxts/charm@0.7.6': {}
+  '@rbxts/charm-sync@0.3.0(@rbxts/charm@0.10.0)':
+    dependencies:
+      '@rbxts/charm': 0.10.0
+
+  '@rbxts/charm@0.10.0': {}
 
   '@rbxts/compiler-types@3.0.0-types.0': {}
 
-  '@rbxts/lapis@0.3.6(@rbxts/t@3.1.1)':
+  '@rbxts/lapis@0.3.8(@rbxts/t@3.1.1)':
     dependencies:
       '@rbxts/t': 3.1.1
 
@@ -517,9 +524,9 @@ snapshots:
 
   '@rbxts/t@3.1.1': {}
 
-  '@rbxts/types@1.0.809': {}
+  '@rbxts/types@1.0.841': {}
 
-  '@rbxts/vide@0.4.6': {}
+  '@rbxts/vide@0.5.6': {}
 
   '@roblox-ts/luau-ast@2.0.0': {}
 
@@ -710,7 +717,7 @@ snapshots:
 
   picomatch@2.3.1: {}
 
-  rbxts-transformer-flamework@1.2.3(typescript@5.5.3):
+  rbxts-transformer-flamework@1.2.4(typescript@5.5.3):
     dependencies:
       '@roblox-ts/rojo-resolver': 1.1.0
       ajv: 8.17.1

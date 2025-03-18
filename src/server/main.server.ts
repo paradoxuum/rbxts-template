@@ -1,13 +1,17 @@
 import { Flamework } from "@flamework/core";
-import { sync } from "@rbxts/charm";
-import { atoms } from "shared/store/sync";
-import { Events } from "./networking";
+import CharmSync from "@rbxts/charm-sync";
+import { atoms } from "shared/store";
+import { Events } from "./remotes";
+import { filterPayload } from "./utils/filter-payload";
 
-const server = sync.server({ atoms });
+const syncer = CharmSync.server({ atoms });
 
-Events.init.connect((player) => server.hydrate(player));
-server.connect((player, payload) => {
-	Events.sync(player, payload);
+syncer.connect((player, payload) => {
+  Events.sync(player, filterPayload(player, payload));
+});
+
+Events.init.connect((player) => {
+  syncer.hydrate(player);
 });
 
 Flamework.addPaths("src/server");
